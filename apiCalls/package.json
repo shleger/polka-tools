@@ -1,0 +1,14 @@
+{
+  "name": "solar_api_req",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@polkadot/api": "^9.5.2",
+    "@polkadot/api-contract": "^9.5.2",
+    "@polkadot/keyring": "^10.1.11",
+    "@polkadot/util": "^10.1.11",
+    "@types/typescript": "^2.0.0"
+  }
+}

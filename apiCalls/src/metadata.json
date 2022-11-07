@@ -1,0 +1,330 @@
+{
+  "source": {
+    "hash": "0x755d9d6f13e3aee5b84eb4315a8f84c0012f9034a295e4762ff99679115b6c42",
+    "language": "ink! 3.3.1",
+    "compiler": "rustc 1.65.0-nightly"
+  },
+  "contract": {
+    "name": "solar_meter",
+    "version": "0.1.0",
+    "authors": [
+      "[your_name] <[your_email]>"
+    ]
+  },
+  "V3": {
+    "spec": {
+      "constructors": [
+        {
+          "args": [
+            {
+              "label": "init_power",
+              "type": {
+                "displayName": [
+                  "u128"
+                ],
+                "type": 4
+              }
+            },
+            {
+              "label": "init_timestamp",
+              "type": {
+                "displayName": [
+                  "u64"
+                ],
+                "type": 3
+              }
+            }
+          ],
+          "docs": [],
+          "label": "new",
+          "payable": false,
+          "selector": "0x9bae9d5e"
+        }
+      ],
+      "docs": [],
+      "events": [
+        {
+          "args": [
+            {
+              "docs": [],
+              "indexed": true,
+              "label": "house",
+              "type": {
+                "displayName": [
+                  "Option"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "power",
+              "type": {
+                "displayName": [
+                  "u128"
+                ],
+                "type": 4
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "timestamp",
+              "type": {
+                "displayName": [
+                  "u64"
+                ],
+                "type": 3
+              }
+            }
+          ],
+          "docs": [],
+          "label": "Measured"
+        }
+      ],
+      "messages": [
+        {
+          "args": [],
+          "docs": [],
+          "label": "get_power",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "u128"
+            ],
+            "type": 4
+          },
+          "selector": "0x2702d574"
+        },
+        {
+          "args": [],
+          "docs": [],
+          "label": "get_timestamp",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "u64"
+            ],
+            "type": 3
+          },
+          "selector": "0x83f889a2"
+        },
+        {
+          "args": [],
+          "docs": [],
+          "label": "get_contract_id",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "AccountId"
+            ],
+            "type": 0
+          },
+          "selector": "0x33e5a624"
+        },
+        {
+          "args": [],
+          "docs": [],
+          "label": "get_owner_id",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "AccountId"
+            ],
+            "type": 0
+          },
+          "selector": "0x479b184a"
+        },
+        {
+          "args": [
+            {
+              "label": "add_power",
+              "type": {
+                "displayName": [
+                  "u128"
+                ],
+                "type": 4
+              }
+            },
+            {
+              "label": "new_timestamp",
+              "type": {
+                "displayName": [
+                  "u64"
+                ],
+                "type": 3
+              }
+            }
+          ],
+          "docs": [
+            " Constructor that initializes the `bool` value to the given `init_value`.",
+            " A message that can be called on instantiated contracts.",
+            " This one flips the value of the stored `bool` from `true`",
+            " to `false` and vice versa."
+          ],
+          "label": "store_generation",
+          "mutates": true,
+          "payable": false,
+          "returnType": null,
+          "selector": "0x100f46d1"
+        }
+      ]
+    },
+    "storage": {
+      "struct": {
+        "fields": [
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "ty": 0
+              }
+            },
+            "name": "contract_id"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0100000000000000000000000000000000000000000000000000000000000000",
+                "ty": 3
+              }
+            },
+            "name": "timestamp"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0200000000000000000000000000000000000000000000000000000000000000",
+                "ty": 4
+              }
+            },
+            "name": "power"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0300000000000000000000000000000000000000000000000000000000000000",
+                "ty": 0
+              }
+            },
+            "name": "owner_id"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0400000000000000000000000000000000000000000000000000000000000000",
+                "ty": 5
+              }
+            },
+            "name": "power_vector"
+          }
+        ]
+      }
+    },
+    "types": [
+      {
+        "id": 0,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 1,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_env",
+            "types",
+            "AccountId"
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "type": {
+          "def": {
+            "array": {
+              "len": 32,
+              "type": 2
+            }
+          }
+        }
+      },
+      {
+        "id": 2,
+        "type": {
+          "def": {
+            "primitive": "u8"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "type": {
+          "def": {
+            "primitive": "u64"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "type": {
+          "def": {
+            "primitive": "u128"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 4
+            }
+          }
+        }
+      },
+      {
+        "id": 6,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "index": 0,
+                  "name": "None"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 0
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Some"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 0
+            }
+          ],
+          "path": [
+            "Option"
+          ]
+        }
+      }
+    ]
+  }
+}
